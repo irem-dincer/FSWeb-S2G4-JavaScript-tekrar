@@ -50,9 +50,11 @@ function KareninAlani(kenaruzunlugu) {
 	4. Hesaplanan çemberin çevresi döndürülecektir.
 */
 
-function CemberinCevresi(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinCevresi(r) {
+  r=5;
+  const sonuc= 2*pi*r
 }
+console.log(sonuc);
 
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -64,9 +66,14 @@ function CemberinCevresi(/* kodlar buraya */) {
 	4. Hesaplanan çemberin alanı döndürülecektir.
 */
 
-function CemberinAlani(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinAlani(r) {
+  
+  r=15;
+ 
+let alan = pi * Math.pow(r, 2); 
 }
+console.log(alan);
+
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -89,37 +96,79 @@ function CemberinAlani(/* kodlar buraya */) {
 
 /*  (oto test yok) sayilar dizisi içinde kaç adet sayı olduğunu konsola yazdırın */
 
-let ucetambolunenler,
-  enkucuk,
-  enbuyuk,
-  ucebolunenlerintoplami,
-  besyuzdenkucuksayilar,
-  siralisayilar,
-  tekraredensayilar;
+
+
+
 
 // 3a çözümü
 
-/* kodlar buraya */
+let enbuyuk=sayilar[0];
+let enkucuk=sayilar[0];
+for( let i=1; i<sayilar.length; i++) {
+
+if(sayilar[i]>enbuyuk) {
+
+enbuyuk=sayilar[i];
+
+}
+else {
+  if(sayilar[i]<enkucuk) {
+
+    enkucuk=sayilar[i];
+
+}
+
+}
+}
+
 
 // 3b çözümü:
+let ucetambolunenler= sayilar.forEach(sayi=> {
+  if(sayi%3===0) {ucetambolunenler.push(sayi)}
+});
 
-/* kodlar buraya */
+
+
 
 // 3c çözümü:
 
-/* kodlar buraya */
+ let ucebolunenlerintoplami= uceTamBolunenler.reduce((call,item)=>call+item,0);
+
 
 // 3d çözümü
 
-/* kodlar buraya */
+let besYuzdenKucukSayilar= sayilar.filter(sayi=> sayi<500);
 
 // 3e çözümü
 
-/* kodlar buraya */
+let siraliSayilar = besYuzdenKucukSayilar.sort((a,b)=>a-b);
+
 
 // 3f çözümü
 
-/* kodlar buraya */
+
+const tekraredensayilar = [];
+const tekrarSayilari = {}; // Tekrar sayılarını saklamak için obje olusturdum
+
+//  Tekrar sayılarını saymak icin dongu olusturdum.
+for (let i = 0; i < sayilar.length; i++) {
+  const sayi = sayilar[i];
+  if (tekrarSayilari[sayi]) {
+    tekrarSayilari[sayi]++; // Sayı zaten varsa, tekrar sayısını artır
+  } else {
+    tekrarSayilari[sayi] = 1; // Sayı ilk defa görülüyorsa, tekrar sayısı 1 olarak ayarla
+  }
+}
+
+//  Tekrar eden sayıları ve tekrar sayılarını kullanarak string oluşturuyoruz
+for (const sayi in tekrarSayilari) {
+  if (tekrarSayilari[sayi] > 1) { // Sadece tekrar eden sayılarla ilgileniyoruz
+    const tekrarSayisi = tekrarSayilari[sayi];
+    const sonucMetni = `${sayi} sayisi ${tekrarSayisi} kere tekrar edilmiştir`;
+    tekraredensayilar.push(string);
+  }
+}
+
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 

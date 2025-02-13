@@ -51,7 +51,6 @@ function KareninAlani(kenaruzunlugu) {
 */
 
 function CemberinCevresi(r) {
-  r=5;
   const sonuc= 2*pi*r
 }
 console.log(sonuc);
@@ -68,7 +67,6 @@ console.log(sonuc);
 
 function CemberinAlani(r) {
   
-  r=15;
  
 let alan = pi * Math.pow(r, 2); 
 }

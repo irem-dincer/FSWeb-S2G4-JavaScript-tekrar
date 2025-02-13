@@ -39,6 +39,8 @@ const sayilar = [
 function KareninAlani(kenaruzunlugu) {
   return kenaruzunlugu * kenaruzunlugu;
 }
+console.log(KareninAlani(10));
+
 
 /* (Oto test yok) Yukarıdaki KareninAlani fonksiyonunu kenar uzunluğu = 10 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -51,9 +53,15 @@ function KareninAlani(kenaruzunlugu) {
 */
 
 function CemberinCevresi(r) {
-  const sonuc= 2*pi*r
+   
+  return 2*pi*r;
 }
-console.log(sonuc);
+console.log(CemberinCevresi(5));
+
+
+
+
+
 
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -67,10 +75,11 @@ console.log(sonuc);
 
 function CemberinAlani(r) {
   
- 
 let alan = pi * Math.pow(r, 2); 
+return alan;
 }
-console.log(alan);
+
+console.log(CemberinAlani(15));
 
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
@@ -121,25 +130,30 @@ else {
 
 
 // 3b çözümü:
-let ucetambolunenler= sayilar.forEach(sayi=> {
-  if(sayi%3===0) {ucetambolunenler.push(sayi)}
+
+let ucetambolunenler=[];
+sayilar.forEach(sayi => {
+  if (sayi % 3 === 0) {
+      ucetambolunenler.push(sayi);
+  }
 });
+
 
 
 
 
 // 3c çözümü:
 
- let ucebolunenlerintoplami= uceTamBolunenler.reduce((call,item)=>call+item,0);
+ let ucebolunenlerintoplami= ucetambolunenler.reduce((call,item)=>call+item,0);
 
 
 // 3d çözümü
 
-let besYuzdenKucukSayilar= sayilar.filter(sayi=> sayi<500);
+let besyuzdenkucuksayilar= sayilar.filter(sayi=> sayi<500);
 
 // 3e çözümü
 
-let siraliSayilar = besYuzdenKucukSayilar.sort((a,b)=>a-b);
+let siralisayilar = besyuzdenkucuksayilar.sort((a,b)=>a-b);
 
 
 // 3f çözümü
@@ -163,7 +177,7 @@ for (const sayi in tekrarSayilari) {
   if (tekrarSayilari[sayi] > 1) { // Sadece tekrar eden sayılarla ilgileniyoruz
     const tekrarSayisi = tekrarSayilari[sayi];
     const sonucMetni = `${sayi} sayisi ${tekrarSayisi} kere tekrar edilmiştir`;
-    tekraredensayilar.push(string);
+    tekraredensayilar.push(sonucMetni);
   }
 }
 
